@@ -390,87 +390,6 @@ export default function PracticePage({ params }) {
 
       {/* ── Question area (scrollable) ── */}
       <div style={{ maxWidth: 680, margin: "0 auto", padding: "12px 16px 0" }}>
-        {/* Question card */}
-        <div
-          style={{
-            background: "#fff",
-            borderRadius: 20,
-            padding: "20px 20px 16px",
-            boxShadow: "0 4px 24px rgba(79,110,247,0.10)",
-            marginBottom: 12,
-            animation: "fadeUp 0.3s ease",
-          }}
-        >
-          {/* Question label */}
-          <div
-            style={{
-              fontSize: 11,
-              color: "#4f6ef7",
-              fontWeight: 700,
-              marginBottom: 8,
-              letterSpacing: 0.5,
-              textTransform: "uppercase",
-            }}
-          >
-            Câu {qIdx + 1} — Đọc thành tiếng
-          </div>
-
-          {/* Play + re-listen buttons */}
-          <div style={{ display: "flex", gap: 8 }}>
-            <button
-              onClick={playQuestion}
-              style={{
-                flex: 1,
-                background: "linear-gradient(90deg,#4f6ef7,#7c3aed)",
-                color: "#fff",
-                borderRadius: 12,
-                padding: "11px 0",
-                fontWeight: 700,
-                fontSize: 14,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 6,
-              }}
-            >
-              🔊 Nghe câu hỏi
-            </button>
-            <button
-              onClick={skipQ}
-              style={{
-                background: "#f1f5f9",
-                color: "#64748b",
-                borderRadius: 12,
-                padding: "11px 16px",
-                fontWeight: 700,
-                fontSize: 13,
-              }}
-            >
-              Bỏ qua →
-            </button>
-          </div>
-        </div>
-
-        {/* Hint (rs-text) */}
-        <div
-          style={{
-            background: "linear-gradient(90deg,#fef3c7,#fde68a30)",
-            border: "1px solid #fde68a",
-            borderRadius: 12,
-            padding: "10px 14px",
-            fontSize: 13,
-            color: "#92400e",
-            fontWeight: 600,
-            marginBottom: 12,
-            display: "flex",
-            alignItems: "center",
-            gap: 8,
-          }}
-        >
-          <span>💡</span> Gợi ý:{" "}
-          <em style={{ color: "#b45309" }}>{q["hint"]}</em>
-        </div>
-
         {/* 4 Answer choices */}
         <div
           style={{
@@ -654,6 +573,85 @@ export default function PracticePage({ params }) {
             minHeight: 36,
           }}
         />
+        {/* Hint (rs-text) */}
+        <div
+          style={{
+            background: "linear-gradient(90deg,#fef3c7,#fde68a30)",
+            border: "1px solid #fde68a",
+            borderRadius: 12,
+            padding: "10px 14px",
+            fontSize: 13,
+            color: "#92400e",
+            fontWeight: 600,
+            marginBottom: 12,
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+          }}
+        >
+          <span>💡</span> Gợi ý:{" "}
+          <em style={{ color: "#b45309" }}>{q["hint"]}</em>
+        </div>
+        {/* Question card */}
+        <div
+          style={{
+            background: "#fff",
+            borderRadius: 20,
+            padding: "20px 20px 16px",
+            boxShadow: "0 4px 24px rgba(79,110,247,0.10)",
+            marginBottom: 12,
+            animation: "fadeUp 0.3s ease",
+          }}
+        >
+          {/* Question label */}
+          <div
+            style={{
+              fontSize: 11,
+              color: "#4f6ef7",
+              fontWeight: 700,
+              marginBottom: 8,
+              letterSpacing: 0.5,
+              textTransform: "uppercase",
+            }}
+          >
+            Câu {qIdx + 1} — Đọc thành tiếng
+          </div>
+
+          {/* Play + re-listen buttons */}
+          <div style={{ display: "flex", gap: 8 }}>
+            <button
+              onClick={playQuestion}
+              style={{
+                flex: 1,
+                background: "linear-gradient(90deg,#4f6ef7,#7c3aed)",
+                color: "#fff",
+                borderRadius: 12,
+                padding: "11px 0",
+                fontWeight: 700,
+                fontSize: 14,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 6,
+              }}
+            >
+              🔊 Nghe câu hỏi
+            </button>
+            <button
+              onClick={skipQ}
+              style={{
+                background: "#f1f5f9",
+                color: "#64748b",
+                borderRadius: 12,
+                padding: "11px 16px",
+                fontWeight: 700,
+                fontSize: 13,
+              }}
+            >
+              Bỏ qua →
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* ── Fixed STT Panel ── */}
