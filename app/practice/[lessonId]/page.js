@@ -133,6 +133,13 @@ export default function PracticePage({ params }) {
     };
   }, []);
 
+  /* ── Auto-play audio khi chuyển câu / load câu đầu ── */
+  useEffect(() => {
+    if (!lesson) return;
+    const q = lesson.lessonWorkingSheet[qIdx];
+    if (q?.["qs-audio"]) readMessage(q["qs-audio"], q["qs-text"]);
+  }, [lesson, qIdx]);
+
   /* ── STT controls exposed via hidden DOM buttons ───── */
   useEffect(() => {
     // These buttons are called by ReadMessageMp3 audio events
