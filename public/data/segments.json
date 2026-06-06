@@ -1,0 +1,80 @@
+[
+  {
+    "segmentID": "segment001",
+    "segmentDes": "Giao tiếp",
+    "lessons": [
+      {
+        "lessonId": "seg01-ls01",
+        "lessonName": "20 câu hỏi và trả lời cơ bản",
+        "lessonShortBrief": "Dành cho người mới bắt đầu học giao tiếp tiếng Anh",
+        "lessonAvartar": "/data/thumbs/a001.png"
+      },
+      {
+        "lessonId": "seg01-ls02",
+        "lessonName": "Chào hỏi và giới thiệu bản thân",
+        "lessonShortBrief": "Các mẫu câu chào hỏi thông dụng nhất",
+        "lessonAvartar": "/data/thumbs/a002.png"
+      },
+      {
+        "lessonId": "seg01-ls03",
+        "lessonName": "Mua sắm và thương lượng",
+        "lessonShortBrief": "Giao tiếp trong tình huống mua sắm",
+        "lessonAvartar": "/data/thumbs/a003.png"
+      },
+      {
+        "lessonId": "seg01-ls04",
+        "lessonName": "Đặt món ở nhà hàng",
+        "lessonShortBrief": "Tiếng Anh trong nhà hàng và quán cà phê",
+        "lessonAvartar": "/data/thumbs/a004.png"
+      },
+      {
+        "lessonId": "seg01-ls05",
+        "lessonName": "Hỏi đường và chỉ đường",
+        "lessonShortBrief": "Giao tiếp khi di chuyển và hỏi đường",
+        "lessonAvartar": "/data/thumbs/a005.png"
+      }
+    ]
+  },
+  {
+    "segmentID": "segment002",
+    "segmentDes": "KET",
+    "lessons": [
+      {
+        "lessonId": "ket-ls01",
+        "lessonName": "KET Vocabulary - Unit 1",
+        "lessonShortBrief": "Từ vựng KET cơ bản unit 1",
+        "lessonAvartar": "/data/thumbs/ket001.png"
+      },
+      {
+        "lessonId": "ket-ls02",
+        "lessonName": "KET Grammar - Present Simple",
+        "lessonShortBrief": "Ngữ pháp thì hiện tại đơn",
+        "lessonAvartar": "/data/thumbs/ket002.png"
+      },
+      {
+        "lessonId": "ket-ls03",
+        "lessonName": "KET Reading Practice",
+        "lessonShortBrief": "Luyện đọc theo chuẩn KET",
+        "lessonAvartar": "/data/thumbs/ket003.png"
+      }
+    ]
+  },
+  {
+    "segmentID": "segment003",
+    "segmentDes": "PET",
+    "lessons": [
+      {
+        "lessonId": "pet-ls01",
+        "lessonName": "PET Speaking Part 1",
+        "lessonShortBrief": "Luyện nói theo chuẩn PET",
+        "lessonAvartar": "/data/thumbs/pet001.png"
+      },
+      {
+        "lessonId": "pet-ls02",
+        "lessonName": "PET Writing Skills",
+        "lessonShortBrief": "Kỹ năng viết PET",
+        "lessonAvartar": "/data/thumbs/pet002.png"
+      }
+    ]
+  }
+]

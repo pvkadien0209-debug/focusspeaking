@@ -1,0 +1,123 @@
+{
+  "segmentID": "segment001",
+  "segmentDes": "Giao tiếp",
+  "lessonId": "seg01-ls01",
+  "lessonName": "20 câu hỏi và trả lời cơ bản",
+  "lessonShortBrief": "Dành cho người mới bắt đầu học giao tiếp tiếng Anh",
+  "lessonAvartar": "/data/thumbs/a001.png",
+  "lessonContent": "Trong bài học này, bạn sẽ được luyện tập 20 câu hỏi và trả lời cơ bản nhất trong tiếng Anh giao tiếp hàng ngày. Mỗi câu đều được thiết kế để bạn có thể sử dụng ngay trong các tình huống thực tế.",
+  "lessonYoutubeLink": null,
+  "lessonMp4Soure": null,
+  "lessonWorkingSheet": [
+    {
+      "stt": 1,
+      "qs-text": "Hôm nay bạn thế nào?",
+      "qs-audio": "A0_01",
+      "aw-A": "How are you today?",
+      "aw-B": "Where are you from?",
+      "aw-C": "What do you do for a living?",
+      "aw-D": "Could you help me, please?",
+      "rs-text": "How are you today?",
+      "rs-dapan": "A"
+    },
+    {
+      "stt": 2,
+      "qs-text": "Bạn đến từ đâu?",
+      "qs-audio": "A0_02",
+      "aw-A": "What do you do for a living?",
+      "aw-B": "Could you help me, please?",
+      "aw-C": "How much does it cost?",
+      "aw-D": "Where are you from?",
+      "rs-text": "Where are you from?",
+      "rs-dapan": "D"
+    },
+    {
+      "stt": 3,
+      "qs-text": "Bạn làm nghề gì?",
+      "qs-audio": "A0_03",
+      "aw-A": "I don't understand.",
+      "aw-B": "What do you do for a living?",
+      "aw-C": "How much does it cost?",
+      "aw-D": "What time is it?",
+      "rs-text": "What do you do for a living?",
+      "rs-dapan": "B"
+    },
+    {
+      "stt": 4,
+      "qs-text": "Bạn có thể giúp tôi được không?",
+      "qs-audio": "A0_04",
+      "aw-A": "Could you help me, please?",
+      "aw-B": "How much does it cost?",
+      "aw-C": "What time is it?",
+      "aw-D": "I don't understand.",
+      "rs-text": "Could you help me, please?",
+      "rs-dapan": "A"
+    },
+    {
+      "stt": 5,
+      "qs-text": "Cái này giá bao nhiêu?",
+      "qs-audio": "A0_05",
+      "aw-A": "What time is it?",
+      "aw-B": "What time is it?",
+      "aw-C": "How much does it cost?",
+      "aw-D": "Could you say that again?",
+      "rs-text": "How much does it cost?",
+      "rs-dapan": "C"
+    },
+    {
+      "stt": 6,
+      "qs-text": "Bây giờ là mấy giờ?",
+      "qs-audio": "A0_06",
+      "aw-A": "What time is it?",
+      "aw-B": "I don't understand.",
+      "aw-C": "Could you say that again?",
+      "aw-D": "Nice to meet you.",
+      "rs-text": "What time is it?",
+      "rs-dapan": "A"
+    },
+    {
+      "stt": 7,
+      "qs-text": "Tôi không hiểu.",
+      "qs-audio": "A0_07",
+      "aw-A": "I don't understand.",
+      "aw-B": "Could you say that again?",
+      "aw-C": "Nice to meet you.",
+      "aw-D": "Have a great day!",
+      "rs-text": "I don't understand.",
+      "rs-dapan": "A"
+    },
+    {
+      "stt": 8,
+      "qs-text": "Bạn có thể nói lại được không?",
+      "qs-audio": "A0_08",
+      "aw-A": "Could you say that again?",
+      "aw-B": "Nice to meet you.",
+      "aw-C": "Have a great day!",
+      "aw-D": "How are you today?",
+      "rs-text": "Could you say that again?",
+      "rs-dapan": "A"
+    },
+    {
+      "stt": 9,
+      "qs-text": "Rất vui được gặp bạn.",
+      "qs-audio": "A0_09",
+      "aw-A": "Nice to meet you.",
+      "aw-B": "Have a great day!",
+      "aw-C": "How are you today?",
+      "aw-D": "Where are you from?",
+      "rs-text": "Nice to meet you.",
+      "rs-dapan": "A"
+    },
+    {
+      "stt": 10,
+      "qs-text": "Chúc bạn một ngày tốt lành!",
+      "qs-audio": "A0_10",
+      "aw-A": "Have a great day!",
+      "aw-B": "How are you today?",
+      "aw-C": "Where are you from?",
+      "aw-D": "What do you do for a living?",
+      "rs-text": "Have a great day!",
+      "rs-dapan": "A"
+    }
+  ]
+}
