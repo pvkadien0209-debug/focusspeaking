@@ -527,168 +527,176 @@ export default function PracticePage({ params }) {
             minHeight: 36,
           }}
         />
-        {/* Phần thao tác */}
-        <div>
-          {/* Hint - ẩn khi đã trả lời */}
-          {lastPick === null && (
-            <div
+        {/* Hint (rs-text) */}
+        <div
+          style={{
+            background: "linear-gradient(90deg,#fef3c7,#fde68a30)",
+            border: "1px solid #fde68a",
+            borderRadius: 12,
+            padding: "10px 14px",
+            fontSize: 13,
+            color: "#92400e",
+            fontWeight: 600,
+            marginBottom: 12,
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+          }}
+        >
+          <span>💡</span> Gợi ý:{" "}
+          <em style={{ color: "#b45309" }}>{q["hint"]}</em>
+        </div>
+        {/* Question card */}
+        <div
+          style={{
+            background: "#fff",
+            borderRadius: 20,
+            padding: "20px 20px 16px",
+            boxShadow: "0 4px 24px rgba(79,110,247,0.10)",
+            marginBottom: 12,
+            animation: "fadeUp 0.3s ease",
+          }}
+        >
+          {/* Question label */}
+
+          {/* Play + re-listen buttons */}
+          <div style={{ display: "flex", gap: 8 }}>
+            <button
+              onClick={playQuestion}
               style={{
-                background: "linear-gradient(90deg,#fef3c7,#fde68a30)",
-                border: "1px solid #fde68a",
+                flex: 1,
+                background: "linear-gradient(90deg,#4f6ef7,#7c3aed)",
+                color: "#fff",
                 borderRadius: 12,
-                padding: "10px 14px",
-                fontSize: 13,
-                color: "#92400e",
-                fontWeight: 600,
-                marginBottom: 12,
+                padding: "11px 0",
+                fontWeight: 700,
+                fontSize: 14,
                 display: "flex",
                 alignItems: "center",
-                gap: 8,
+                justifyContent: "center",
+                gap: 6,
               }}
             >
-              <span>💡</span> Gợi ý:{" "}
-              <em style={{ color: "#b45309" }}>{q["hint"]}</em>
-            </div>
-          )}
+              🔊 Nghe câu hỏi
+            </button>
+            <button
+              onClick={skipQ}
+              style={{
+                background: "#f1f5f9",
+                color: "#64748b",
+                borderRadius: 12,
+                padding: "11px 16px",
+                fontWeight: 700,
+                fontSize: 13,
+              }}
+            >
+              Bỏ qua →
+            </button>
+          </div>
+        </div>
 
-          {/* Nút Nghe + Bỏ qua - ẩn khi đã trả lời */}
-          {lastPick === null && (
-            <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
-              <button
-                onClick={playQuestion}
+        {/* Similarity readout */}
+        {lastSim !== null && (
+          <div
+            style={{
+              background: "#fff",
+              borderRadius: 12,
+              padding: "10px 14px",
+              border: "1px solid #e0e7ff",
+              marginBottom: 12,
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              animation: "popIn 0.25s ease",
+            }}
+          >
+            <span style={{ fontSize: 20 }}>📊</span>
+            <div style={{ flex: 1 }}>
+              <div
                 style={{
-                  flex: 1,
-                  background: "linear-gradient(90deg,#4f6ef7,#7c3aed)",
-                  color: "#fff",
+                  fontSize: 11,
+                  color: "#64748b",
+                  fontWeight: 600,
+                  marginBottom: 4,
+                }}
+              >
+                Độ giống: {Math.round(lastSim * 100)}%
+              </div>
+              <div
+                style={{
+                  height: 8,
+                  background: "#e0e7ff",
+                  borderRadius: 99,
+                  overflow: "hidden",
+                }}
+              >
+                <div
+                  style={{
+                    height: "100%",
+                    width: `${lastSim * 100}%`,
+                    background:
+                      lastSim >= 0.7
+                        ? "#22c55e"
+                        : lastSim >= 0.4
+                          ? "#eab308"
+                          : "#ef4444",
+                    borderRadius: 99,
+                    transition: "width 0.5s ease",
+                  }}
+                />
+              </div>
+
+              {/* Giải thích (rs-explain) */}
+              <div
+                style={{
+                  background: "linear-gradient(90deg,#fef3c7,#fde68a30)",
+                  border: "1px solid #fde68a",
                   borderRadius: 12,
-                  padding: "11px 0",
-                  fontWeight: 700,
-                  fontSize: 14,
+                  padding: "10px 14px",
+                  fontSize: 13,
+                  color: "#92400e",
+                  fontWeight: 600,
+                  marginBottom: 12,
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "center",
-                  gap: 6,
+                  gap: 8,
                 }}
               >
-                🔊 Nghe câu hỏi
-              </button>
-              <button
-                onClick={skipQ}
-                style={{
-                  background: "#f1f5f9",
-                  color: "#64748b",
-                  borderRadius: 12,
-                  padding: "11px 16px",
-                  fontWeight: 700,
-                  fontSize: 13,
-                }}
-              >
-                Bỏ qua →
-              </button>
-            </div>
-          )}
-
-          {/* Similarity readout */}
-          {lastSim !== null && (
-            <div
-              style={{
-                background: "#fff",
-                borderRadius: 12,
-                padding: "10px 14px",
-                border: "1px solid #e0e7ff",
-                marginBottom: 12,
-                display: "flex",
-                alignItems: "center",
-                gap: 10,
-                animation: "popIn 0.25s ease",
-              }}
-            >
-              <span style={{ fontSize: 20 }}>📊</span>
-              <div style={{ flex: 1 }}>
-                <div
-                  style={{
-                    fontSize: 11,
-                    color: "#64748b",
-                    fontWeight: 600,
-                    marginBottom: 4,
-                  }}
-                >
-                  Độ giống: {Math.round(lastSim * 100)}%
-                </div>
-                <div
-                  style={{
-                    height: 8,
-                    background: "#e0e7ff",
-                    borderRadius: 99,
-                    overflow: "hidden",
-                  }}
-                >
-                  <div
-                    style={{
-                      height: "100%",
-                      width: `${lastSim * 100}%`,
-                      background:
-                        lastSim >= 0.7
-                          ? "#22c55e"
-                          : lastSim >= 0.4
-                            ? "#eab308"
-                            : "#ef4444",
-                      borderRadius: 99,
-                      transition: "width 0.5s ease",
-                    }}
-                  />
-                </div>
-                <div
-                  style={{
-                    background: "linear-gradient(90deg,#fef3c7,#fde68a30)",
-                    border: "1px solid #fde68a",
-                    borderRadius: 12,
-                    padding: "8px 12px",
-                    fontSize: 13,
-                    color: "#92400e",
-                    fontWeight: 600,
-                    marginTop: 8,
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 8,
-                  }}
-                >
-                  <span>💡</span> Giải thích:{" "}
-                  <em style={{ color: "#b45309" }}>
-                    {q["rs-explain"] || "Không có giải thích nào"}
-                  </em>
-                </div>
+                <span>💡</span> Giải thích:{" "}
+                <em style={{ color: "#b45309" }}>
+                  {q["rs-explain"]
+                    ? q["rs-explain"]
+                    : "Không có giải thích nào"}
+                </em>
               </div>
-              {lastCorrect !== null && (
-                <span style={{ fontSize: 18 }}>
-                  {lastCorrect ? "✅" : "❌"}
-                </span>
-              )}
             </div>
-          )}
+            {lastCorrect !== null && (
+              <span style={{ fontSize: 18 }}>{lastCorrect ? "✅" : "❌"}</span>
+            )}
+          </div>
+        )}
 
-          {/* Next button */}
-          {lastPick !== null && (
-            <button
-              onClick={nextQ}
-              style={{
-                width: "100%",
-                background: "linear-gradient(90deg,#22c55e,#16a34a)",
-                color: "#fff",
-                borderRadius: 14,
-                padding: "14px",
-                fontFamily: "var(--font-head)",
-                fontWeight: 800,
-                fontSize: 16,
-                boxShadow: "0 4px 16px rgba(34,197,94,0.30)",
-                marginBottom: 12,
-                animation: "popIn 0.2s ease",
-              }}
-            >
-              Câu tiếp theo →
-            </button>
-          )}
-        </div>
+        {/* Next button (visible after check) */}
+        {lastPick !== null && (
+          <button
+            onClick={nextQ}
+            style={{
+              width: "100%",
+              background: "linear-gradient(90deg,#22c55e,#16a34a)",
+              color: "#fff",
+              borderRadius: 14,
+              padding: "14px",
+              fontFamily: "var(--font-head)",
+              fontWeight: 800,
+              fontSize: 16,
+              boxShadow: "0 4px 16px rgba(34,197,94,0.30)",
+              marginBottom: 12,
+              animation: "popIn 0.2s ease",
+            }}
+          >
+            Câu tiếp theo →
+          </button>
+        )}
       </div>
 
       {/* ── Fixed STT Panel ── */}
