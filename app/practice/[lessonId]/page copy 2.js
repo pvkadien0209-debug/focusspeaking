@@ -186,8 +186,6 @@ export default function PracticePage({ params }) {
     recognitionRef.current._shouldRun = true;
     try {
       recognitionRef.current.start();
-      // Lưu ref vào window để lesson page có thể tắt khi navigate về
-      window.__sttRecognition = recognitionRef.current;
       setSttActive(true);
     } catch (_) {}
   }
@@ -199,17 +197,6 @@ export default function PracticePage({ params }) {
       recognitionRef.current.stop();
       setSttActive(false);
     } catch (_) {}
-  }
-
-  function hardStopMic() {
-    if (recognitionRef.current) {
-      recognitionRef.current._shouldRun = false;
-      try {
-        recognitionRef.current.abort();
-      } catch (_) {}
-    }
-    window.__sttRecognition = null;
-    setSttActive(false);
   }
 
   function resetSTT() {
@@ -261,7 +248,6 @@ export default function PracticePage({ params }) {
     resetSTT();
     const total = lesson.lessonWorkingSheet.length;
     if (qIdx + 1 >= total) {
-      hardStopMic();
       setDone(true);
     } else {
       setQIdx((q) => q + 1);
@@ -646,7 +632,7 @@ export default function PracticePage({ params }) {
         <div>
           {/* Nút Nghe + Bỏ qua - ẩn khi đã trả lời */}
           {lastPick === null && (
-            <div style={{ display: "flex", gap: 8, marginBottom: 12, alignItems: "center" }}>
+            <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
               {!textMode && (
                 <button
                   onClick={playQuestion}
@@ -670,7 +656,6 @@ export default function PracticePage({ params }) {
               <button
                 onClick={skipQ}
                 style={{
-                  marginLeft: "auto",
                   background: "#f1f5f9",
                   color: "#64748b",
                   borderRadius: 12,

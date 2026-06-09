@@ -1,23 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+
 export default function LessonPage({ params }) {
   const router = useRouter();
   const [lesson, setLesson] = useState(null);
   const [err, setErr] = useState("");
   const [tab, setTab] = useState("content");
-
-  /* ── Tắt mic nếu còn bật từ trang practice ── */
-  useEffect(() => {
-    // practice/page.js lưu recognition ref vào window.__sttRecognition khi start
-    try {
-      if (window.__sttRecognition) {
-        window.__sttRecognition._shouldRun = false;
-        window.__sttRecognition.abort();
-        window.__sttRecognition = null;
-      }
-    } catch (_) {}
-  }, []);
 
   useEffect(() => {
     fetch(`/data/lessons/${params.lessonId}.json`)
@@ -28,6 +17,7 @@ export default function LessonPage({ params }) {
       .then(setLesson)
       .catch(() => setErr("Không tìm thấy bài học: " + params.lessonId));
   }, [params.lessonId]);
+
   /* ── Back: về segment chứa bài này ── */
   function goBack() {
     if (lesson?.segmentID) {
@@ -36,6 +26,7 @@ export default function LessonPage({ params }) {
       router.back();
     }
   }
+
   if (err)
     return (
       <div style={{ padding: 32, textAlign: "center" }}>
@@ -59,6 +50,7 @@ export default function LessonPage({ params }) {
         </button>
       </div>
     );
+
   if (!lesson)
     return (
       <div
@@ -72,6 +64,7 @@ export default function LessonPage({ params }) {
         Đang tải...
       </div>
     );
+
   return (
     <div style={{ minHeight: "100vh", background: "var(--c-bg)" }}>
       {/* Header */}
@@ -129,6 +122,7 @@ export default function LessonPage({ params }) {
           </div>
         </div>
       </div>
+
       {/* Tabs */}
       <div
         style={{
@@ -168,6 +162,7 @@ export default function LessonPage({ params }) {
           </button>
         ))}
       </div>
+
       <div
         style={{ maxWidth: 720, margin: "0 auto", padding: "24px 16px 120px" }}
       >
@@ -218,6 +213,7 @@ export default function LessonPage({ params }) {
             </button>
           </div>
         )}
+
         {/* VIDEO TAB */}
         {tab === "video" && (
           <div style={{ animation: "fadeUp 0.3s ease" }}>
@@ -293,6 +289,7 @@ export default function LessonPage({ params }) {
             )}
           </div>
         )}
+
         {/* PRACTICE TAB */}
         {tab === "practice" && lesson.lessonWorkingSheet?.length > 0 && (
           <div style={{ animation: "fadeUp 0.3s ease", textAlign: "center" }}>
@@ -352,6 +349,7 @@ export default function LessonPage({ params }) {
     </div>
   );
 }
+
 function extractYoutubeId(url) {
   if (!url) return "";
   const m = url.match(/(?:v=|youtu\.be\/)([^&?/]+)/);
