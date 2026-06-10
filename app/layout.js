@@ -4,6 +4,9 @@ export const metadata = {
   title: "FocusSpeaking – Học tiếng Anh bằng giọng nói",
   description:
     "Phương pháp học tiếng Anh tập trung vào nói – trả lời trắc nghiệm bằng giọng nói",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {
